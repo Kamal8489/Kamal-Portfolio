@@ -1,0 +1,455 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #000000;
+  color: #e5e7eb;
+}
+
+/* ================= COMMON ================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: #334155;
+  margin: 60px 0;
+}
+
+.body_section {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ================= NAVIGATION ================= */
+.navigation {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.9);
+  /* filter: blur(10px); */
+  padding: 20px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.navigation h2 span {
+  color: #38bdf8;
+}
+
+.navigation nav {
+  display: flex;
+  gap: 30px;
+}
+
+.navigation nav a {
+  font-size: 16px;
+  position: relative;
+}
+
+.navigation nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  transition: 0.3s;
+}
+
+.navigation nav a:hover::after {
+  width: 100%;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icons i {
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.icons i:hover {
+  color: #38bdf8;
+  transform: translateY(-3px);
+}
+
+/* ================= BURGER ================= */
+.burger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero_section {
+  padding: 80px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero_section_part1 h1 {
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero_section_part1 p {
+  margin: 20px 0;
+  line-height: 1.7;
+  color: #cbd5f5;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.hero_section_part1 span {
+  color: #38bdf8;
+}
+
+.contact {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+  font-weight: 500;
+  transition: 0.3s;
+  animation: fadeUp 1.4s ease forwards;
+}
+
+.contact:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+.download-cv {
+  margin-left: 15px;
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+.download-cv:hover {
+  background: #22c55e;
+  color: #0f172a;
+}
+
+/* ===== Responsive buttons =====
+.hero_section_part1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+} */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .contact {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero_section_part1 {
+    justify-content: center;
+  }
+
+  .contact {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    margin: 5px;
+    padding: 14px;
+  }
+
+  .download-cv {
+    margin-left: 0;
+    margin: 5px;
+  }
+}
+
+.hero_section_part2 img {
+  border-radius: 20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ================= ABOUT ================= */
+#About {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.about {
+  padding: 40px 8%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.profile p {
+  padding: 10px;
+  text-align: left;
+  line-height: 1.8;
+  color: #cbd5f5;
+}
+/* ================= PERSONAL DATA ================= */
+.data {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.data .p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e5e7eb;
+  text-align: left;
+}
+
+.data .p span {
+  color: #38bdf8;
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+/* ================= HOBBIES ================= */
+.hoppies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.hoppies .p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: #020617;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: default;
+  transition: all 0.3s ease;
+}
+
+/* Icon styling */
+.hoppies .p i {
+  font-size: 18px;
+}
+
+/* Hover animation */
+.hoppies .p:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .data .p {
+    font-size: 14px;
+  }
+
+  .hoppies .p {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hoppies {
+    justify-content: center;
+  }
+
+  .data .p {
+    text-align: center;
+  }
+}
+
+/* Force left alignment */
+.data,
+.data .p,
+.hoppies {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+/* Keep hobbies aligned left even on mobile */
+@media (max-width: 480px) {
+  .hoppies {
+    justify-content: flex-start;
+  }
+}
+
+/* ================= SKILLS ================= */
+.skil h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.sk {
+  padding: 0 8%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.sk > div {
+  background: #020617;
+  padding: 30px;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.sk > div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+}
+
+.sk i {
+  color: gold;
+}
+
+/* ================= PROJECT ================= */
+.project {
+  padding: 40px 8%;
+}
+
+.project_head h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.project_show {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.project_show div {
+  background: #020617;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.project_show div:hover {
+  transform: scale(1.03);
+}
+
+.project_show img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.project_show h3,
+.project_show p {
+  padding: 15px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #020617;
+  padding: 40px 8% 20px;
+}
+
+.footer_section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer_icons i {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero_section,
+  .about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .navigation nav {
+    position: absolute;
+    top: 80px;
+    right: -100%;
+    background: #000000;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 0;
+    transition: 0.4s;
+  }
+
+  .navigation nav.active {
+    right: 0;
+  }
+}
